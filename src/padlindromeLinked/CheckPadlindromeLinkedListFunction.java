@@ -26,6 +26,7 @@ public class CheckPadlindromeLinkedListFunction {
         fast = head;
         
         // Comparing the slow and fast linked list
+        // If the node was odd, we don't care what is in the middle ex: 1,2,2,2,1
         while(slow != null){
             // If last node is not the same as first node, false
             if(slow.val != fast.val){
@@ -44,14 +45,22 @@ public class CheckPadlindromeLinkedListFunction {
 		// The last node is always pointing to null
 		ListNode previous = null;
 		
+		// While head is not null
 		while(head != null){
+			// Keep track of what is next first
 			ListNode nextTemp = head.next;
+			
 			head.next = previous;
+			
+			// previous will be the head now, it should be null first
 			previous = head;
+			
+			// move the head now
 			head = nextTemp;
 	        
 		}
 		
+		// Since head will be null, we need to return previous
 		return previous;
 	}
 }
