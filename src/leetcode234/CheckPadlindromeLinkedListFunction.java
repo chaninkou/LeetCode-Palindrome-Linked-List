@@ -1,4 +1,4 @@
-package padlindromeLinked;
+package leetcode234;
 
 public class CheckPadlindromeLinkedListFunction {
 	public boolean isPalindrome(ListNode head) {
